@@ -7,7 +7,7 @@ BUILD_AT="/tmp/edeliver/$APP/builds"
 RELEASE_DIR="/tmp/edeliver/$APP/builds/_build/prod/rel/$APP"
 
 # prevent re-installing node modules; this defaults to "."
-GIT_CLEAN_PATHS="_build rel priv/static"
+# GIT_CLEAN_PATHS="_build rel priv/static"
 
 # STAGING_HOSTS="csv.getconstructor.com"
 # STAGING_USER="deployer"
@@ -33,6 +33,7 @@ pre_erlang_clean_compile() {
     # [ -f ~/.profile ] && source ~/.profile # load profile (optional)
     source ~/.profile
     set -e # fail if any command fails (recommended)
+    echo PORT is $PORT
     cd '$BUILD_AT' # enter the build directory on the build host (required)
     # prepare something
     mkdir -p priv/static # required by the phx.digest task
