@@ -16,6 +16,7 @@ RELEASE_DIR="/tmp/edeliver/$APP/builds/_build/prod/rel/$APP"
 PRODUCTION_HOSTS="csv.getconstructor.com"
 PRODUCTION_USER="deployer"
 DELIVER_TO="/home/deployer"
+PORT=8888
 
 # For *Phoenix* projects, symlink prod.secret.exs to our tmp source
 pre_erlang_get_and_update_deps() {
