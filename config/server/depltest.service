@@ -1,0 +1,16 @@
+[Unit]
+Description=Phoenix server for depltest app
+After=network.target
+
+[Service]
+User=deployer
+Group=deployer
+Restart=on-failure
+
+EnvironmentFile=/etc/default/depltest
+
+ExecStart= /home/deployer/depltest/bin/depltest foreground
+ExecStop= /home/deployer/depltest/bin/depltest stop
+
+[Install]
+WantedBy=multi-user.target
