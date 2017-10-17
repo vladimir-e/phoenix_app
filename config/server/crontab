@@ -1,0 +1,2 @@
+# at 3:47am, renew all Let's Encrypt certificates over 60 days old
+47 3 * * *   certbot renew --renew-hook "service nginx reload"
